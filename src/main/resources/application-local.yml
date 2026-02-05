@@ -10,6 +10,14 @@ logging:
 
 maze:
   name: data-ohlcvdatasets
+  storage:
+    ohlcvdatasets:
+      enabled: false
+      bucket: local-ohlcv-datasets
+      prefix: ohlcv-datasets
+      region: eu-central-1
+      endpoint: http://localhost:4566
+      force-path-style: true
 
 spring:
   datasource:

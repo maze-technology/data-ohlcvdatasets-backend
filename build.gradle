@@ -31,6 +31,7 @@ ext {
   cloudEventsSpringVersion    = "4.0.1"
   springCloudVersion          = "2025.1.1"
   lz4JavaVersion              = "1.10.3"
+  awsSdkVersion               = "2.32.17"
 }
 
 repositories {
@@ -117,6 +118,9 @@ dependencies {
 
   // Protobuf Java Util
   implementation "com.google.protobuf:protobuf-java-util:$protobufJavaVersion"
+
+  // AWS SDK (S3)
+  implementation "software.amazon.awssdk:s3:$awsSdkVersion"
 
   // Database
   implementation "org.springframework.boot:spring-boot-starter-data-jpa"
