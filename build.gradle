@@ -122,6 +122,8 @@ dependencies {
   // AWS SDK (S3)
   implementation "software.amazon.awssdk:s3:$awsSdkVersion"
 
+  // Parquet (writer)
+
   // Database
   implementation "org.springframework.boot:spring-boot-starter-data-jpa"
 
@@ -213,6 +215,18 @@ test {
       required = true
     }
   }
+}
+
+tasks.named("bootJar") {
+  duplicatesStrategy = org.gradle.api.file.DuplicatesStrategy.EXCLUDE
+}
+
+tasks.withType(org.gradle.api.tasks.bundling.Tar).configureEach {
+  duplicatesStrategy = org.gradle.api.file.DuplicatesStrategy.EXCLUDE
+}
+
+tasks.withType(org.gradle.api.tasks.bundling.Zip).configureEach {
+  duplicatesStrategy = org.gradle.api.file.DuplicatesStrategy.EXCLUDE
 }
 
 jacocoTestReport {

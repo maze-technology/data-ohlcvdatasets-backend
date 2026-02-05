@@ -28,3 +28,8 @@ spring:
     enabled: true
   cache:
     enabled: false
+
+maze:
+  storage:
+    ohlcvdatasets:
+      enabled: false
