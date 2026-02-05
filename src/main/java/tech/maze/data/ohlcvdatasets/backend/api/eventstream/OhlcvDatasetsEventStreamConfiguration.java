@@ -1,8 +1,7 @@
 package tech.maze.data.ohlcvdatasets.backend.api.eventstream;
 
-import com.google.protobuf.InvalidProtocolBufferException;
+import com.google.protobuf.Empty;
 import io.cloudevents.CloudEvent;
-import io.cloudevents.CloudEventData;
 import java.util.function.Consumer;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
@@ -13,12 +12,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import tech.maze.commons.eventstream.EventSender;
 import tech.maze.commons.eventstream.MazeEventProperties;
-import tech.maze.dtos.ohlcvdatasets.monitoredmarkets.requests.TrackRequest;
-import tech.maze.dtos.ohlcvdatasets.monitoredmarkets.requests.TrackResponse;
-import tech.maze.dtos.ohlcvdatasets.monitoredmarkets.requests.UntrackRequest;
-import tech.maze.dtos.ohlcvdatasets.monitoredmarkets.requests.UntrackResponse;
-import tech.maze.dtos.ohlcvdatasets.requests.SyncOHLCVs;
-import tech.maze.dtos.ohlcvdatasets.requests.SyncOHLCVsResponse;
 
 /**
  * Event stream configuration for OHLCV datasets processing.
@@ -61,27 +54,18 @@ public class OhlcvDatasetsEventStreamConfiguration {
   }
 
   private void handleSyncRequest(CloudEvent event) {
-    final SyncOHLCVs request = parse(event, SyncOHLCVs.parser());
-    log.info("Received SyncOHLCVsRequest: {}", request);
-
-    final SyncOHLCVsResponse response = SyncOHLCVsResponse.newBuilder().build();
-    sendReplyIfPresent(event, response);
+    log.info("Received SyncOHLCVs event with id {}", event.getId());
+    sendReplyIfPresent(event, Empty.getDefaultInstance());
   }
 
   private void handleTrackRequest(CloudEvent event) {
-    final TrackRequest request = parse(event, TrackRequest.parser());
-    log.info("Received TrackRequest: {}", request);
-
-    final TrackResponse response = TrackResponse.newBuilder().build();
-    sendReplyIfPresent(event, response);
+    log.info("Received TrackRequest event with id {}", event.getId());
+    sendReplyIfPresent(event, Empty.getDefaultInstance());
   }
 
   private void handleUntrackRequest(CloudEvent event) {
-    final UntrackRequest request = parse(event, UntrackRequest.parser());
-    log.info("Received UntrackRequest: {}", request);
-
-    final UntrackResponse response = UntrackResponse.newBuilder().build();
-    sendReplyIfPresent(event, response);
+    log.info("Received UntrackRequest event with id {}", event.getId());
+    sendReplyIfPresent(event, Empty.getDefaultInstance());
   }
 
   private void sendReplyIfPresent(CloudEvent event, com.google.protobuf.Message response) {
@@ -96,24 +80,4 @@ public class OhlcvDatasetsEventStreamConfiguration {
     }
   }
 
-  private <T extends com.google.protobuf.Message> T parse(
-      CloudEvent event,
-      com.google.protobuf.Parser<T> parser
-  ) {
-    final byte[] bytes = extractBytes(event);
-    try {
-      return parser.parseFrom(bytes);
-    } catch (InvalidProtocolBufferException ex) {
-      throw new IllegalArgumentException("Failed to decode event payload", ex);
-    }
-  }
-
-  private byte[] extractBytes(CloudEvent event) {
-    final CloudEventData data = event.getData();
-    if (data == null) {
-      throw new IllegalArgumentException("CloudEvent has no data");
-    }
-
-    return data.toBytes();
-  }
 }
