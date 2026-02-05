@@ -128,7 +128,9 @@ dependencies {
   // Parquet (writer)
   implementation "org.apache.parquet:parquet-avro:$parquetVersion"
   implementation "org.apache.avro:avro:$avroVersion"
-  implementation "org.apache.hadoop:hadoop-common:$hadoopVersion"
+  implementation("org.apache.hadoop:hadoop-common:$hadoopVersion") {
+    exclude group: "org.glassfish.jaxb", module: "jaxb-core"
+  }
 
   // Database
   implementation "org.springframework.boot:spring-boot-starter-data-jpa"
