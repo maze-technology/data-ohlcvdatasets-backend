@@ -225,6 +225,10 @@ test {
   }
 }
 
+tasks.named("bootJar") {
+  duplicatesStrategy = org.gradle.api.file.DuplicatesStrategy.EXCLUDE
+}
+
 jacocoTestReport {
   sourceSets(sourceSets.main)
   executionData fileTree(project.rootDir.absolutePath).include("**/build/jacoco/*.exec")
