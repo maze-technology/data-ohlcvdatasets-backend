@@ -29,6 +29,19 @@ public record OhlcvDataset(
     OhlcvDatasetMarket market,
     String longTermStorageKey
 ) {
+  /**
+   * Creates an OHLCV dataset instance.
+   *
+   * @param id dataset identifier
+   * @param dataProvider data provider identifier
+   * @param timeframe dataset timeframe
+   * @param startAt start timestamp
+   * @param endAt end timestamp
+   * @param orderCount number of entries
+   * @param createdAt creation timestamp
+   * @param market market metadata
+   * @param longTermStorageKey storage key (S3/Parquet)
+   */
   public OhlcvDataset {
     Objects.requireNonNull(dataProvider, "dataProvider must not be null");
     Objects.requireNonNull(timeframe, "timeframe must not be null");

@@ -11,18 +11,37 @@ public class OrderedOhlcvDataKey implements Serializable {
   private UUID ohlcvDatasetId;
   private int position;
 
+  /**
+   * Default constructor for JPA.
+   */
   public OrderedOhlcvDataKey() {
   }
 
+  /**
+   * Creates a composite key for ordered OHLCV data.
+   *
+   * @param ohlcvDatasetId dataset identifier
+   * @param position ordered position
+   */
   public OrderedOhlcvDataKey(UUID ohlcvDatasetId, int position) {
     this.ohlcvDatasetId = ohlcvDatasetId;
     this.position = position;
   }
 
+  /**
+   * Returns the dataset identifier.
+   *
+   * @return dataset identifier
+   */
   public UUID getOhlcvDatasetId() {
     return ohlcvDatasetId;
   }
 
+  /**
+   * Returns the ordered position.
+   *
+   * @return ordered position
+   */
   public int getPosition() {
     return position;
   }

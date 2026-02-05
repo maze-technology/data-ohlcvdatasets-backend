@@ -15,6 +15,13 @@ public record OrderedOhlcvData(
     int position,
     byte[] data
 ) {
+  /**
+   * Creates an ordered OHLCV data entry.
+   *
+   * @param datasetId dataset identifier
+   * @param position ordered position
+   * @param data serialized OHLCV payload
+   */
   public OrderedOhlcvData {
     Objects.requireNonNull(datasetId, "datasetId must not be null");
     Objects.requireNonNull(data, "data must not be null");
