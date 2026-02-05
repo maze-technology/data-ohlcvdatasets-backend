@@ -34,6 +34,7 @@ ext {
   awsSdkVersion               = "2.41.22"
   parquetVersion              = "1.14.2"
   avroVersion                 = "1.12.0"
+  hadoopVersion               = "3.4.0"
 }
 
 repositories {
@@ -127,6 +128,7 @@ dependencies {
   // Parquet (writer)
   implementation "org.apache.parquet:parquet-avro:$parquetVersion"
   implementation "org.apache.avro:avro:$avroVersion"
+  implementation "org.apache.hadoop:hadoop-common:$hadoopVersion"
 
   // Database
   implementation "org.springframework.boot:spring-boot-starter-data-jpa"
