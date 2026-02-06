@@ -31,7 +31,7 @@ ext {
   cloudEventsSpringVersion    = "4.0.1"
   springCloudVersion          = "2025.1.1"
   lz4JavaVersion              = "1.10.3"
-  awsSdkVersion               = "2.41.22"
+  awsSdkVersion               = "2.41.23"
 }
 
 repositories {
@@ -172,7 +172,7 @@ dependencies {
 }
 
 checkstyle {
-  toolVersion = "13.1.0"
+  toolVersion = "13.2.0"
   config = resources.text.fromFile("$rootDir/config/checkstyle/checkstyle.xml")
   maxWarnings = 0
   ignoreFailures = false
