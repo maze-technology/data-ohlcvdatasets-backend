@@ -17,7 +17,7 @@ ext {
   wiremockVersion             = "3.13.2"
   mapStructVersion            = "1.6.3"
   snakeyamlVersion            = "2.5"
-  postgresqlVersion           = "42.7.9"
+  postgresqlVersion           = "42.7.10"
   springBootVersion           = "4.0.2"
   mazeCommonsVersion          = "0.0.14"
   mazeDtosOhlcvdatasetsVersion   = "0.0.1"
@@ -31,7 +31,7 @@ ext {
   cloudEventsSpringVersion    = "4.0.1"
   springCloudVersion          = "2025.1.1"
   lz4JavaVersion              = "1.10.3"
-  awsSdkVersion               = "2.41.26"
+  awsSdkVersion               = "2.41.27"
 }
 
 repositories {
