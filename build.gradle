@@ -19,7 +19,7 @@ ext {
   snakeyamlVersion            = "2.5"
   postgresqlVersion           = "42.7.10"
   springBootVersion           = "4.0.3"
-  mazeCommonsVersion          = "0.0.14"
+  mazeCommonsVersion          = "0.0.17"
   mazeDtosOhlcvdatasetsVersion   = "0.0.1"
   protobufJavaVersion         = "4.33.5"
   grpcSpringBootVersion       = "1.0.2"
@@ -31,7 +31,7 @@ ext {
   cloudEventsSpringVersion    = "4.0.1"
   springCloudVersion          = "2025.1.1"
   lz4JavaVersion              = "1.10.3"
-  awsSdkVersion               = "2.41.33"
+  awsSdkVersion               = "2.41.34"
 }
 
 repositories {
