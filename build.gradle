@@ -13,7 +13,7 @@ group = "tech.maze"
 ext {
   jakartaVersion              = "3.0.0"
   junitVersion                = "6.0.3"
-  lombokVersion               = "1.18.42"
+  lombokVersion               = "1.18.44"
   wiremockVersion             = "3.13.2"
   mapStructVersion            = "1.6.3"
   snakeyamlVersion            = "2.6"
@@ -31,7 +31,7 @@ ext {
   cloudEventsSpringVersion    = "4.0.1"
   springCloudVersion          = "2025.1.1"
   lz4JavaVersion              = "1.10.4"
-  awsSdkVersion               = "2.42.9"
+  awsSdkVersion               = "2.42.10"
 }
 
 repositories {
