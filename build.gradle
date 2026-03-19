@@ -23,7 +23,7 @@ ext {
   mazeDtosOhlcvdatasetsVersion   = "0.0.2"
   protobufJavaVersion         = "4.34.0"
   grpcSpringBootVersion       = "1.0.2"
-  testContainersVersion       = "2.0.3"
+  testContainersVersion       = "2.0.4"
   mapStructSPIProtobufVersion = "1.1.0"
   lombokMapstructBindingVersion = "0.2.0"
   flywayVersion               = "12.1.1"
@@ -31,7 +31,7 @@ ext {
   cloudEventsSpringVersion    = "4.0.1"
   springCloudVersion          = "2025.1.1"
   lz4JavaVersion              = "1.10.4"
-  awsSdkVersion               = "2.42.15"
+  awsSdkVersion               = "2.42.16"
 }
 
 repositories {
