@@ -31,7 +31,7 @@ ext {
   cloudEventsSpringVersion    = "4.0.2"
   springCloudVersion          = "2025.1.1"
   lz4JavaVersion              = "1.11.0"
-  awsSdkVersion               = "2.44.12"
+  awsSdkVersion               = "2.44.13"
 }
 
 repositories {
