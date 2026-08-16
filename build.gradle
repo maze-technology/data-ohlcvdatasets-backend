@@ -103,7 +103,7 @@ dependencies {
   implementation "tech.maze:commons:$mazeCommonsVersion"
 
   // Maze Hello World DTOs
-  implementation "tech.maze:dtos.ohlcvdatasets:$mazeDtosOhlcvdatasetsVersion"
+  implementation "tech.maze.dtos.dataplatform:ohlcvdatasets:$mazeDtosOhlcvdatasetsVersion"
 
   // Spring Boot
   implementation "org.springframework.boot:spring-boot-starter-validation"
